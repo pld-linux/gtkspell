@@ -1,21 +1,23 @@
 Summary:	GTK+ Spell Checker Interface Library
 Summary(pl):	Biblioteka z interfejsem do narzêdzia sprawdzaj±cego pisowniê dla GTK+
 Name:		gtkspell
-Version:	2.0.5
+Version:	2.0.6
 Release:	1
 Epoch:		1
 License:	GPL
 Vendor:		Evan Martin <martine@cs.washington.edu>
 Group:		X11/Libraries
 Source0:	http://gtkspell.sourceforge.net/download/%{name}-%{version}.tar.gz
-# Source0-md5:	851df91ac86419c5e3e3a79b018ead31
+# Source0-md5:	ee9b6b08b808cc84661c58bf2197cb31
 URL:		http://gtkspell.sourceforge.net/
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	gtk+2-devel >= 2.2.0
-BuildRequires:	docbook-dtd42-xml
-BuildRequires:	libtool
 BuildRequires:	aspell-devel
+BuildRequires:	autoconf >= 2.57
+BuildRequires:	automake
+BuildRequires:	docbook-dtd42-xml
+BuildRequires:	gtk+2-devel >= 2.2.0
+Buildrequires:	gtk-doc >= 1.0
+BuildRequires:	libtool
+Buildrequires:	pango-devel >= 1.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -75,13 +77,15 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
