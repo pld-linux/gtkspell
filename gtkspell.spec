@@ -8,6 +8,7 @@ License:	GPL
 Vendor:		Evan Martin <martine@cs.washington.edu>
 Group:		X11/Libraries
 Source0:	http://gtkspell.sourceforge.net/download/%{name}-%{version}.tar.gz
+# Source0-md5:	4ded985b8eefdf9ac6fbf79cad69ccbd
 URL:		http://gtkspell.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
