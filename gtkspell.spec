@@ -15,7 +15,7 @@ BuildRequires:	automake
 BuildRequires:	gtk+2-devel
 BuildRequires:	docbook-dtd42-xml
 BuildRequires:	libtool
-BuildRequires:	pspell-devel
+BuildRequires:	aspell-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
