@@ -1,7 +1,7 @@
 Summary:	GTK+ Spell Checker Interface Library
 Summary(pl):	Biblioteka z interfejsem do narzêdzia sprawdzaj±cego pisowniê dla GTK+
 Name:		gtkspell
-Version:	2.0.2
+Version:	2.0.4
 Release:	1
 Epoch:		1
 License:	GPL
@@ -15,7 +15,6 @@ BuildRequires:	gtk+2-devel
 BuildRequires:	libtool
 BuildRequires:	pspell-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 GtkSpell provides MSWord/MacOSX-style highlighting of misspelled words
@@ -60,7 +59,8 @@ rm -f missing
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure 
+%configure \
+	--enable-gtk-doc
 
 %{__make}
 
