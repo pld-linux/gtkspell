@@ -18,6 +18,7 @@ BuildRequires:	gtk+2-devel >= 1:2.2.0
 Buildrequires:	gtk-doc >= 1.0
 BuildRequires:	libtool
 Buildrequires:	pango-devel >= 1.4.0
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,6 +37,7 @@ Summary(pl):	Pliki nag³ówkowe dla gtkspella
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	aspell-devel
+Requires:	gtk+2-devel >= 1:2.2.0
 
 %description devel
 Header files for gtkspell.
@@ -59,7 +61,6 @@ Biblioteki statyczne dla gtkspella.
 %setup -q
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
