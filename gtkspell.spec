@@ -10,19 +10,24 @@ Group:		X11/Libraries
 Source0:	http://gtkspell.sourceforge.net/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-lang.patch
 URL:		http://gtkspell.sourceforge.net/
-BuildRequires:	automake
 BuildRequires:	autoconf
-BuildRequires:	libtool
+BuildRequires:	automake
 BuildRequires:	gtk+2-devel
+BuildRequires:	libtool
 BuildRequires:	pspell-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 
 %description
-GtkSpell provides MSWord/MacOSX-style highlighting of misspelled words in a
-GtkTextView widget.  Right-clicking a misspelled word pops up a menu of
-suggested replacements.
+GtkSpell provides MSWord/MacOSX-style highlighting of misspelled words
+in a GtkTextView widget. Right-clicking a misspelled word pops up a
+menu of suggested replacements.
+
+%description -l pl
+GtkSpell udostêpnia podobne do MS Worda lub MacOSX pod¶wietlanie
+b³êdnie napisanych s³ów w widgecie GtkTextView. Klikniêcie prawym
+przyciskiem na b³êdne s³owo otwiera menu z sugerowanymi poprawkami.
 
 %package devel
 Summary:	Header files for gtkspell
@@ -72,11 +77,11 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 install example/*.c $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
-
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
