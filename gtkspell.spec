@@ -52,7 +52,7 @@ Static libraries for gtkspell.
 Biblioteki statyczne dla gtkspella.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 rm -f missing
