@@ -15,9 +15,9 @@ BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	docbook-dtd42-xml
 BuildRequires:	gtk+2-devel >= 1:2.2.0
-Buildrequires:	gtk-doc >= 1.0
+BuildRequires:	gtk-doc >= 1.0
 BuildRequires:	libtool
-Buildrequires:	pango-devel >= 1.4.0
+BuildRequires:	pango-devel >= 1.4.0
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
