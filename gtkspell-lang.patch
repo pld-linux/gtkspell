@@ -1,0 +1,28 @@
+diff -Nur gtkspell-2.0.0/gtkspell/gtkspell_pspell.c gtkspell-2.0.0.new/gtkspell/gtkspell_pspell.c
+--- gtkspell-2.0.0/gtkspell/gtkspell_pspell.c	Sat Mar 30 02:12:21 2002
++++ gtkspell-2.0.0.new/gtkspell/gtkspell_pspell.c	Tue Jul 16 03:58:47 2002
+@@ -6,6 +6,7 @@
+ 
+ #include <gtk/gtk.h>
+ #include <pspell/pspell.h>
++#include <stdlib.h>
+ #include "spell.h"
+ 
+ /* in theory, this file could be replaced by a file that provided the same
+@@ -43,8 +44,14 @@
+ gtkspell_init() {
+ 	PspellConfig *config = new_pspell_config();
+ 	PspellCanHaveError *err;
+-
+-	pspell_config_replace(config, "language-tag", "en_US"); /* FIXME */
++	gchar *env = g_strdup(getenv("LANG"));
++	
++	if (env == NULL)
++	    env = g_strdup("en_US");
++	
++	pspell_config_replace(config, "language-tag", env);
++	g_free(env);
++	
+ 	err = new_pspell_manager(config);
+ 	if (pspell_error_number(err) != 0) {
+ 		g_warning("pspell: %s\n", pspell_error_message(err));
