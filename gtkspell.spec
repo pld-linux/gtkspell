@@ -1,4 +1,4 @@
-Summary:	GTK+ Spell Checker Interface Library.
+Summary:	GTK+ Spell Checker Interface Library
 Summary(pl):	Biblioteka z interfejsem do narzêdzia sprawdzaj±cego pisowniê dla GTK+
 Name:		gtkspell
 Version:	2.0.2
