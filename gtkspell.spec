@@ -1,0 +1,96 @@
+Summary:	GTK+ Spell Checker Interface Library.
+Summary(pl):	Biblioteka z interfejsem do narzêdzia sprawdzaj±cego pisowniê dla GTK+
+Name:		gtkspell
+Version:	2.0.0
+Release:	1
+Epoch:		1
+License:	GPL
+Vendor:		Evan Martin <martine@cs.washington.edu>
+Group:		X11/Libraries
+Source0:	http://gtkspell.sourceforge.net/download/%{name}-%{version}.tar.gz
+Patch0:		%{name}-lang.patch
+URL:		http://gtkspell.sourceforge.net/
+BuildRequires:	automake
+BuildRequires:	autoconf
+BuildRequires:	libtool
+BuildRequires:	gtk+2-devel
+BuildRequires:	pspell-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_prefix		/usr/X11R6
+
+%description
+GtkSpell provides MSWord/MacOSX-style highlighting of misspelled words in a
+GtkTextView widget.  Right-clicking a misspelled word pops up a menu of
+suggested replacements.
+
+%package devel
+Summary:	Header files for gtkspell
+Summary(pl):	Pliki nag³ówkowe dla gtkspella
+Group:		X11/Development/Libraries
+Requires:	%{name} = %{version}
+
+%description devel
+Header files for gtkspell.
+
+%description devel -l pl
+Pliki nag³ówkowe dla gtkspella.
+
+%package static
+Summary:	Static libraries for gtkspell
+Summary(pl):	Biblioteki statyczne dla gtkspella
+Group:		X11/Development/Libraries
+Requires:	%{name}-devel = %{version}
+
+%description static
+Static libraries for gtkspell.
+
+%description static -l pl
+Biblioteki statyczne dla gtkspella.
+
+%prep
+%setup -q -n %{name}-%{version}
+%patch0 -p1
+
+%build
+rm -f missing
+%{__libtoolize}
+aclocal
+%{__autoconf}
+%{__automake}
+%configure 
+
+%{__make}
+
+%install
+rm -rf $RPM_BUILD_ROOT
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	pkgconfigdir=%{_pkgconfigdir}
+
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
+install example/*.c $RPM_BUILD_ROOT%{_examplesdir}/%{name}
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc README
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
+
+%files devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.la
+%{_includedir}/%{name}-2.0
+%{_pkgconfigdir}/*.pc
+%{_examplesdir}/%{name}
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
