@@ -16,7 +16,6 @@ BuildRequires:	libtool
 BuildRequires:	pspell-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 GtkSpell provides MSWord/MacOSX-style highlighting of misspelled words
