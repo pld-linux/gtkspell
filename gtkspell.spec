@@ -33,6 +33,7 @@ Summary:	Header files for gtkspell
 Summary(pl):	Pliki nag³ówkowe dla gtkspella
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}
+Requires:	aspell-devel
 
 %description devel
 Header files for gtkspell.
