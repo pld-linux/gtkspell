@@ -31,7 +31,7 @@ przyciskiem na b³êdne s³owo otwiera menu z sugerowanymi poprawkami.
 Summary:	Header files for gtkspell
 Summary(pl):	Pliki nag³ówkowe dla gtkspella
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 
 %description devel
 Header files for gtkspell.
@@ -43,7 +43,7 @@ Pliki nag³ówkowe dla gtkspella.
 Summary:	Static libraries for gtkspell
 Summary(pl):	Biblioteki statyczne dla gtkspella
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{epoch}:%{version}
 
 %description static
 Static libraries for gtkspell.
