@@ -14,7 +14,7 @@ BuildRequires:	aspell-devel
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	docbook-dtd42-xml
-BuildRequires:	gtk+2-devel >= 2.2.0
+BuildRequires:	gtk+2-devel >= 1:2.2.0
 Buildrequires:	gtk-doc >= 1.0
 BuildRequires:	libtool
 Buildrequires:	pango-devel >= 1.4.0
@@ -34,7 +34,7 @@ przyciskiem na b³êdne s³owo otwiera menu z sugerowanymi poprawkami.
 Summary:	Header files for gtkspell
 Summary(pl):	Pliki nag³ówkowe dla gtkspella
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	aspell-devel
 
 %description devel
@@ -47,7 +47,7 @@ Pliki nag³ówkowe dla gtkspella.
 Summary:	Static libraries for gtkspell
 Summary(pl):	Biblioteki statyczne dla gtkspella
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 Static libraries for gtkspell.
