@@ -13,6 +13,7 @@ URL:		http://gtkspell.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel
+BuildRequires:  docbook-dtd42-xml
 BuildRequires:	libtool
 BuildRequires:	pspell-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
