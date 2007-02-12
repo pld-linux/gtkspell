@@ -1,5 +1,5 @@
 Summary:	GTK+ Spell Checker Interface Library
-Summary(pl):	Biblioteka z interfejsem do narzÍdzia sprawdzaj±cego pisowniÍ dla GTK+
+Summary(pl.UTF-8):   Biblioteka z interfejsem do narzƒôdzia sprawdzajƒÖcego pisowniƒô dla GTK+
 Name:		gtkspell
 Version:	2.0.11
 Release:	4
@@ -26,14 +26,14 @@ GtkSpell provides MSWord/MacOSX-style highlighting of misspelled words
 in a GtkTextView widget. Right-clicking a misspelled word pops up a
 menu of suggested replacements.
 
-%description -l pl
-GtkSpell udostÍpnia podobne do MS Worda lub MacOSX pod∂wietlanie
-b≥Ídnie napisanych s≥Ûw w widgecie GtkTextView. KlikniÍcie prawym
-przyciskiem na b≥Ídne s≥owo otwiera menu z sugerowanymi poprawkami.
+%description -l pl.UTF-8
+GtkSpell udostƒôpnia podobne do MS Worda lub MacOSX pod≈õwietlanie
+b≈Çƒôdnie napisanych s≈Ç√≥w w widgecie GtkTextView. Klikniƒôcie prawym
+przyciskiem na b≈Çƒôdne s≈Çowo otwiera menu z sugerowanymi poprawkami.
 
 %package devel
 Summary:	Header files for gtkspell
-Summary(pl):	Pliki nag≥Ûwkowe dla gtkspella
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe dla gtkspella
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	aspell-devel
@@ -42,19 +42,19 @@ Requires:	gtk+2-devel >= 1:2.10.0
 %description devel
 Header files for gtkspell.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe dla gtkspella.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe dla gtkspella.
 
 %package static
 Summary:	Static libraries for gtkspell
-Summary(pl):	Biblioteki statyczne dla gtkspella
+Summary(pl.UTF-8):   Biblioteki statyczne dla gtkspella
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 Static libraries for gtkspell.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteki statyczne dla gtkspella.
 
 %prep
