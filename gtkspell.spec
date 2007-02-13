@@ -1,5 +1,5 @@
 Summary:	GTK+ Spell Checker Interface Library
-Summary(pl.UTF-8):   Biblioteka z interfejsem do narzędzia sprawdzającego pisownię dla GTK+
+Summary(pl.UTF-8):	Biblioteka z interfejsem do narzędzia sprawdzającego pisownię dla GTK+
 Name:		gtkspell
 Version:	2.0.11
 Release:	4
@@ -33,7 +33,7 @@ przyciskiem na błędne słowo otwiera menu z sugerowanymi poprawkami.
 
 %package devel
 Summary:	Header files for gtkspell
-Summary(pl.UTF-8):   Pliki nagłówkowe dla gtkspella
+Summary(pl.UTF-8):	Pliki nagłówkowe dla gtkspella
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	aspell-devel
@@ -47,7 +47,7 @@ Pliki nagłówkowe dla gtkspella.
 
 %package static
 Summary:	Static libraries for gtkspell
-Summary(pl.UTF-8):   Biblioteki statyczne dla gtkspella
+Summary(pl.UTF-8):	Biblioteki statyczne dla gtkspella
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
