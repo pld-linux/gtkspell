@@ -1,23 +1,23 @@
 Summary:	GTK+ Spell Checker Interface Library
 Summary(pl.UTF-8):	Biblioteka z interfejsem do narzędzia sprawdzającego pisownię dla GTK+
 Name:		gtkspell
-Version:	2.0.11
-Release:	4
+Version:	2.0.13
+Release:	1
 Epoch:		1
 License:	GPL
-Vendor:		Evan Martin <martine@cs.washington.edu>
 Group:		X11/Libraries
 Source0:	http://gtkspell.sourceforge.net/download/%{name}-%{version}.tar.gz
-# Source0-md5:	494869f67146a12a3f17a958f51aeb05
+# Source0-md5:	f4e21418d2e53bcf4c7affcdae8a213e
 URL:		http://gtkspell.sourceforge.net/
-BuildRequires:	aspell-devel
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	docbook-dtd42-xml
-BuildRequires:	gtk+2-devel >= 1:2.10.0
+BuildRequires:	enchant-devel >= 0.4.0
+BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gtk-doc >= 1.6
+BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool
-BuildRequires:	pango-devel >= 1.13.3
+BuildRequires:	pango-devel >= 1:1.13.3
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,8 +36,8 @@ Summary:	Header files for gtkspell
 Summary(pl.UTF-8):	Pliki nagłówkowe dla gtkspella
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	aspell-devel
-Requires:	gtk+2-devel >= 1:2.10.0
+Requires:	enchant-devel >= 0.4.0
+Requires:	gtk+2-devel >= 2:2.10.0
 
 %description devel
 Header files for gtkspell.
@@ -90,16 +90,17 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libgtkspell.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgtkspell.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libgtkspell.so
+%{_libdir}/libgtkspell.la
 %{_includedir}/%{name}-2.0
-%{_pkgconfigdir}/*.pc
+%{_pkgconfigdir}/gtkspell-2.0.pc
 %{_gtkdocdir}/%{name}
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libgtkspell.a
