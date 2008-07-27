@@ -2,7 +2,7 @@ Summary:	GTK+ Spell Checker Interface Library
 Summary(pl.UTF-8):	Biblioteka z interfejsem do narzędzia sprawdzającego pisownię dla GTK+
 Name:		gtkspell
 Version:	2.0.13
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Libraries
