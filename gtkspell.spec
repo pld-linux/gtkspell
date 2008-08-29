@@ -1,13 +1,13 @@
 Summary:	GTK+ Spell Checker Interface Library
 Summary(pl.UTF-8):	Biblioteka z interfejsem do narzędzia sprawdzającego pisownię dla GTK+
 Name:		gtkspell
-Version:	2.0.13
-Release:	2
+Version:	2.0.14
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://gtkspell.sourceforge.net/download/%{name}-%{version}.tar.gz
-# Source0-md5:	f4e21418d2e53bcf4c7affcdae8a213e
+# Source0-md5:	da168e9b69e70454ba04d0f1fd82686e
 URL:		http://gtkspell.sourceforge.net/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -66,7 +66,6 @@ Biblioteki statyczne dla gtkspella.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure \
 	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
