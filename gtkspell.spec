@@ -1,13 +1,13 @@
 Summary:	GTK+ Spell Checker Interface Library
 Summary(pl.UTF-8):	Biblioteka z interfejsem do narzędzia sprawdzającego pisownię dla GTK+
 Name:		gtkspell
-Version:	2.0.14
-Release:	2
+Version:	2.0.16
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://gtkspell.sourceforge.net/download/%{name}-%{version}.tar.gz
-# Source0-md5:	da168e9b69e70454ba04d0f1fd82686e
+# Source0-md5:	f75dcc9338f182c571b321d37c606a94
 URL:		http://gtkspell.sourceforge.net/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -58,10 +58,23 @@ Static libraries for gtkspell.
 %description static -l pl.UTF-8
 Biblioteki statyczne dla gtkspella.
 
+%package apidocs
+Summary:	gtkspell API documentation
+Summary(pl.UTF-8):	Dokumentacja API gtkspell
+Group:		Documentation
+Requires:	gtk-doc-common
+
+%description apidocs
+gtkspell API documentation.
+
+%description apidocs -l pl.UTF-8
+Dokumentacja API gtkspell.
+
 %prep
 %setup -q
 
 %build
+%{__gtkdocize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -97,10 +110,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgtkspell.so
 %{_libdir}/libgtkspell.la
-%{_includedir}/%{name}-2.0
+%{_includedir}/gtkspell-2.0
 %{_pkgconfigdir}/gtkspell-2.0.pc
-%{_gtkdocdir}/%{name}
 
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libgtkspell.a
+
+%files apidocs
+%defattr(644,root,root,755)
+%{_gtkdocdir}/gtkspell
