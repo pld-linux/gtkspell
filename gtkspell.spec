@@ -2,7 +2,7 @@ Summary:	GTK+ Spell Checker Interface Library
 Summary(pl.UTF-8):	Biblioteka z interfejsem do narzędzia sprawdzającego pisownię dla GTK+
 Name:		gtkspell
 Version:	2.0.16
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL
 Group:		X11/Libraries
@@ -92,6 +92,8 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libgtkspell.la
+
 %find_lang %{name}
 
 %clean
@@ -109,7 +111,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgtkspell.so
-%{_libdir}/libgtkspell.la
 %{_includedir}/gtkspell-2.0
 %{_pkgconfigdir}/gtkspell-2.0.pc
 
