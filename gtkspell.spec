@@ -47,16 +47,16 @@ Header files for gtkspell.
 Pliki nagłówkowe dla gtkspella.
 
 %package static
-Summary:	Static libraries for gtkspell
-Summary(pl.UTF-8):	Biblioteki statyczne dla gtkspella
+Summary:	Static gtkspell library
+Summary(pl.UTF-8):	Biblioteka statyczna gtkspell
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
-Static libraries for gtkspell.
+Static gtkspell library.
 
 %description static -l pl.UTF-8
-Biblioteki statyczne dla gtkspella.
+Biblioteka statyczna gtkspell.
 
 %package apidocs
 Summary:	gtkspell API documentation
